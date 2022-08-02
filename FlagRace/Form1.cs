@@ -17,15 +17,6 @@ namespace FlagRace
 
         SqlConnection connection = new SqlConnection(@"Data Source=NB3401-0011;Initial Catalog=DbFlag;Integrated Security=True");
 
-        public static Bitmap ByteToImage(byte[] blob)
-        {
-            MemoryStream mStream = new MemoryStream();
-            byte[] pData = blob;
-            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-            Bitmap bm = new Bitmap(mStream, false);
-            mStream.Dispose();
-            return bm;
-        }
 
         public Form1()
         {
@@ -39,20 +30,23 @@ namespace FlagRace
 
         private void btnA_Click(object sender, EventArgs e)
         {
+            Random random = new Random();
+
+            int number=random.Next(1, 5);
+
+            Image img = Image.FromFile(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}.png", number));
+
+            pctBoxFlag.Image = img;
+
             pctBoxFlag.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            connection.Open();
-            SqlCommand cmd = new SqlCommand("select flag from TblFlag where name='Turkey'", connection);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["Flag"]);
-                pctBoxFlag.Image = new Bitmap(ms);
-            }
 
-            connection.Close();
+
+
+
+
+
+
         }
     }
 }
