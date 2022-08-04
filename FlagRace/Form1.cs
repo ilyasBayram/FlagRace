@@ -15,12 +15,57 @@ namespace FlagRace
 {
     public partial class Form1 : Form
     {
+        Random random = new Random();
 
-        int number;
+        ArrayList usedNumbers = new ArrayList();
+
+        int numberReal;
+
+        int numberWrong;
 
         string continent;
 
+        void getQuestion()
+        {
+            
+            continent = cmBoxConitinents.Text;
 
+            string[] files = Directory.GetFiles(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}", continent));
+
+            if (usedNumbers.Count == files.Length)
+
+                usedNumbers.Clear();
+
+
+            numberReal = random.Next(files.Length);
+
+            usedNumbers.Add(numberReal);
+
+            numberWrong = random.Next(files.Length);
+
+            while (true)
+            {
+                if (usedNumbers.Contains(numberReal) == true || numberReal==numberRea)
+                {
+                    numberReal = random.Next(files.Length);
+                }
+                
+            }
+
+            string indexReal = Path.GetFileNameWithoutExtension(files[numberReal]);
+
+            string indexfake = Path.GetFileNameWithoutExtension(files[numberWrong]);
+
+            Image imgReal = Image.FromFile(files[numberReal]);
+
+            pctBoxFlag.Image = imgReal;
+
+            pctBoxFlag.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            btnA.Text = indexReal;
+            btnB.Text = indexfake;
+
+        }
         public Form1()
         {
             InitializeComponent();
@@ -33,32 +78,9 @@ namespace FlagRace
 
         private void btnA_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-
-            continent = cmBoxConitinents.Text;
-
-            string[] files = Directory.GetFiles(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}", continent));
-
-            number = random.Next(0, files.Length);
-
-            string index = Path.GetFileNameWithoutExtension(files[number]); ;
-
-            
-            Image imgReal = Image.FromFile(files[number]);
-
-            pctBoxFlag.Image = imgReal;
-
-            pctBoxFlag.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            btnA.Text = index;
-
-
-
-
-
-
-
+            getQuestion();
 
         }
+
     }
 }
