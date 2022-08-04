@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Collections;
 
 namespace FlagRace
 {
     public partial class Form1 : Form
     {
 
-        SqlConnection connection = new SqlConnection(@"Data Source=NB3401-0011;Initial Catalog=DbFlag;Integrated Security=True");
+        int number;
+
+        string continent;
 
 
         public Form1()
@@ -32,13 +35,22 @@ namespace FlagRace
         {
             Random random = new Random();
 
-            int number=random.Next(1, 5);
+            continent = cmBoxConitinents.Text;
 
-            Image img = Image.FromFile(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}.png", number));
+            string[] files = Directory.GetFiles(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}", continent));
 
-            pctBoxFlag.Image = img;
+            number = random.Next(0, files.Length);
+
+            string index = Path.GetFileNameWithoutExtension(files[number]); ;
+
+            
+            Image imgReal = Image.FromFile(files[number]);
+
+            pctBoxFlag.Image = imgReal;
 
             pctBoxFlag.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            btnA.Text = index;
 
 
 
