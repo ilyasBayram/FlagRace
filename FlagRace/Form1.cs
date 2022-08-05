@@ -21,6 +21,7 @@ namespace FlagRace
 
         ArrayList usedNumbers = new ArrayList();
 
+  
         #region variables
 
         int numberReal, numberWrong, countCorrectAnswer, countWrongAnswer;
@@ -95,6 +96,12 @@ namespace FlagRace
             pctBoxFlag.Visible = false;
         }
 
+        void makeCountZero()
+        {
+            countCorrectAnswer = 0;
+            countWrongAnswer = 0;
+        }
+
         void startButton()
         {
             if (btnStart.Text == "Start")
@@ -102,6 +109,8 @@ namespace FlagRace
                 btnStart.Text = "Exit";
 
                 visibleTrueMembers();
+
+                makeCountZero();
 
                 cmBoxConitinents.Enabled = false;
 
@@ -116,6 +125,8 @@ namespace FlagRace
                 btnStart.Text = "Start";
 
                 visibleFlaseMember();
+
+                makeCountZero();
 
                 lblRealCorrectAnswer.Text = "0";
 
@@ -152,7 +163,7 @@ namespace FlagRace
 
             indexReal = Path.GetFileNameWithoutExtension(files[numberReal]);
 
-             indexFake = Path.GetFileNameWithoutExtension(files[numberWrong]);
+            indexFake = Path.GetFileNameWithoutExtension(files[numberWrong]);
 
             Image imgReal = Image.FromFile(files[numberReal]);
 
