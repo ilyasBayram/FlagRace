@@ -46,6 +46,7 @@ namespace FlagRace
             // 
             // cmBoxConitinents
             // 
+            this.cmBoxConitinents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(211)))), ((int)(((byte)(200)))));
             this.cmBoxConitinents.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmBoxConitinents.FormattingEnabled = true;
             this.cmBoxConitinents.Items.AddRange(new object[] {
@@ -75,12 +76,13 @@ namespace FlagRace
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnStart.Location = new System.Drawing.Point(24, 389);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(179, 63);
             this.btnStart.TabIndex = 5;
             this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // pctBoxFlag
@@ -93,22 +95,24 @@ namespace FlagRace
             // 
             // btnA
             // 
+            this.btnA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnA.Location = new System.Drawing.Point(55, 350);
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(189, 63);
             this.btnA.TabIndex = 3;
             this.btnA.Text = "button1";
-            this.btnA.UseVisualStyleBackColor = true;
+            this.btnA.UseVisualStyleBackColor = false;
             this.btnA.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btnB
             // 
+            this.btnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnB.Location = new System.Drawing.Point(356, 350);
             this.btnB.Name = "btnB";
             this.btnB.Size = new System.Drawing.Size(189, 63);
             this.btnB.TabIndex = 4;
             this.btnB.Text = "button2";
-            this.btnB.UseVisualStyleBackColor = true;
+            this.btnB.UseVisualStyleBackColor = false;
             this.btnB.Click += new System.EventHandler(this.btnB_Click);
             // 
             // grpBoxGame
@@ -131,6 +135,7 @@ namespace FlagRace
             // 
             this.lblRealWrongAnnswer.AutoSize = true;
             this.lblRealWrongAnnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRealWrongAnnswer.ForeColor = System.Drawing.Color.Black;
             this.lblRealWrongAnnswer.Location = new System.Drawing.Point(520, 492);
             this.lblRealWrongAnnswer.Name = "lblRealWrongAnnswer";
             this.lblRealWrongAnnswer.Size = new System.Drawing.Size(23, 25);
@@ -141,6 +146,7 @@ namespace FlagRace
             // 
             this.lblWrongAnswer.AutoSize = true;
             this.lblWrongAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblWrongAnswer.ForeColor = System.Drawing.Color.Black;
             this.lblWrongAnswer.Location = new System.Drawing.Point(351, 492);
             this.lblWrongAnswer.Name = "lblWrongAnswer";
             this.lblWrongAnswer.Size = new System.Drawing.Size(158, 25);
@@ -151,6 +157,7 @@ namespace FlagRace
             // 
             this.lblRealCorrectAnswer.AutoSize = true;
             this.lblRealCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRealCorrectAnswer.ForeColor = System.Drawing.Color.Black;
             this.lblRealCorrectAnswer.Location = new System.Drawing.Point(228, 492);
             this.lblRealCorrectAnswer.Name = "lblRealCorrectAnswer";
             this.lblRealCorrectAnswer.Size = new System.Drawing.Size(23, 25);
@@ -161,6 +168,7 @@ namespace FlagRace
             // 
             this.lblCorrectAnswer.AutoSize = true;
             this.lblCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCorrectAnswer.ForeColor = System.Drawing.Color.Black;
             this.lblCorrectAnswer.Location = new System.Drawing.Point(50, 492);
             this.lblCorrectAnswer.Name = "lblCorrectAnswer";
             this.lblCorrectAnswer.Size = new System.Drawing.Size(163, 25);
@@ -173,12 +181,18 @@ namespace FlagRace
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(140)))), ((int)(((byte)(163)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(858, 616);
             this.Controls.Add(this.grpBoxGame);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblContinent);
             this.Controls.Add(this.cmBoxConitinents);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flag Race";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFlag)).EndInit();
