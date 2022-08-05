@@ -21,36 +21,22 @@ namespace FlagRace
 
         ArrayList usedNumbers = new ArrayList();
 
+        #region variables
 
-        int numberReal;
+        int numberReal, numberWrong, countCorrectAnswer, countWrongAnswer;
 
-        int numberWrong;
 
-        int countCorrectAnswer;
+        string continent, indexReal, indexFake;
 
-        int countTotalQuestion;
-
-        string continent;
-
-        string indexReal;
-
-        string indexFake;
 
         string[] files;
 
+        #endregion
 
+        #region methdos
         void realNumberCreat()
         {
             numberReal = randomFile.Next(files.Length);
-        }
-
-        void score()
-        {
-            ;
-            if ((sender as Button).Text==)
-            {
-
-            }
         }
 
         void fakeNumberCreat()
@@ -58,6 +44,89 @@ namespace FlagRace
             numberWrong = randomFile.Next(files.Length);
         }
 
+        void score(object sender)
+        {
+            if ((sender as Button).Name=="btnA")
+            {
+                lblRealCorrectAnswer.Text = btnA.Text == indexReal ? Convert.ToString(countCorrectAnswer += 1) : Convert.ToString(countCorrectAnswer);
+
+                lblRealWrongAnnswer.Text = btnA.Text == indexFake ? Convert.ToString(countWrongAnswer += 1) : Convert.ToString(countWrongAnswer);
+            }
+            else if ((sender as Button).Name == "btnB")
+            {
+                lblRealCorrectAnswer.Text = btnB.Text == indexReal ? Convert.ToString(countCorrectAnswer += 1) : Convert.ToString(countCorrectAnswer);
+
+                lblRealWrongAnnswer.Text = btnB.Text == indexFake ? Convert.ToString(countWrongAnswer += 1) : Convert.ToString(countWrongAnswer);
+            }
+        }
+
+        void visibleTrueMembers()
+        {
+            lblRealCorrectAnswer.Visible = true;
+
+            lblRealWrongAnnswer.Visible = true;
+
+            lblCorrectAnswer.Visible = true;
+
+            lblWrongAnswer.Visible = true;
+
+            btnA.Visible = true;
+
+            btnB.Visible = true;
+
+            pctBoxFlag.Visible = true;
+        }
+
+        void visibleFlaseMember()
+        {
+
+            lblRealCorrectAnswer.Visible = false;
+
+            lblRealWrongAnnswer.Visible = false;
+
+            lblCorrectAnswer.Visible = false;
+
+            lblWrongAnswer.Visible = false;
+
+            btnA.Visible = false;
+
+            btnB.Visible = false;
+
+            pctBoxFlag.Visible = false;
+        }
+
+        void startButton()
+        {
+            if (btnStart.Text == "Start")
+            {
+                btnStart.Text = "Exit";
+
+                visibleTrueMembers();
+
+                cmBoxConitinents.Enabled = false;
+
+                continent = cmBoxConitinents.Text;
+
+                files = Directory.GetFiles(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}", continent));
+
+                getQuestion(continent, files);
+            }
+            else if (btnStart.Text == "Exit")
+            {
+                btnStart.Text = "Start";
+
+                visibleFlaseMember();
+
+                lblRealCorrectAnswer.Text = "0";
+
+                lblRealWrongAnnswer.Text = "0";
+
+                cmBoxConitinents.Enabled = true;
+
+                usedNumbers.Clear();
+            }
+        }
+        
         void getQuestion(string continent, string [] files)
         {
              
@@ -104,25 +173,29 @@ namespace FlagRace
            
 
         }
+
+        #endregion
+
+
         public Form1()
         {
             InitializeComponent();
         }
 
+        #region main
+
         private void Form1_Load(object sender, EventArgs e)
         {
             cmBoxConitinents.Text = "Europe";
 
-            btnA.Visible = false;
-
-            btnB.Visible = false;
+            visibleFlaseMember();
 
         }
 
         private void btnA_Click(object sender, EventArgs e)
         {
 
-            lblRealCorrectAnswer.Text = btnA.Text == indexReal ? Convert.ToString(countCorrectAnswer += 1) : Convert.ToString(countCorrectAnswer);
+            score(sender);
 
             getQuestion(continent, files);
 
@@ -133,52 +206,19 @@ namespace FlagRace
         private void btnB_Click(object sender, EventArgs e)
         {
 
-            lblRealCorrectAnswer.Text = btnB.Text == indexReal ? Convert.ToString(countCorrectAnswer += 1) : Convert.ToString(countCorrectAnswer);
+            score(sender);
 
             getQuestion(continent, files);
 
         }
 
-
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (btnStart.Text =="Start")
-            {
-                btnStart.Text = "Exit";
-
-                cmBoxConitinents.Enabled = false;
-
-                btnA.Visible = true;
-
-                btnB.Visible = true;
-
-                pctBoxFlag.Visible = true;
-
-                continent = cmBoxConitinents.Text;
-
-                files = Directory.GetFiles(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}", continent));
-
-                getQuestion(continent, files);
-            }
-            else if(btnStart.Text == "Exit")
-            {
-                btnStart.Text = "Start";
-
-                cmBoxConitinents.Enabled = true;
-
-                btnA.Visible = false;
-
-                btnB.Visible = false;
-
-                pctBoxFlag.Visible = false;
-
-                usedNumbers.Clear();
-            }
-            
-
-           
+            startButton();
+        
         }
 
-    
+        #endregion
+
     }
 }

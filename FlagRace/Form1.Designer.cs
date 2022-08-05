@@ -36,6 +36,8 @@ namespace FlagRace
             this.btnA = new System.Windows.Forms.Button();
             this.btnB = new System.Windows.Forms.Button();
             this.grpBoxGame = new System.Windows.Forms.GroupBox();
+            this.lblRealWrongAnnswer = new System.Windows.Forms.Label();
+            this.lblWrongAnswer = new System.Windows.Forms.Label();
             this.lblRealCorrectAnswer = new System.Windows.Forms.Label();
             this.lblCorrectAnswer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFlag)).BeginInit();
@@ -111,6 +113,8 @@ namespace FlagRace
             // 
             // grpBoxGame
             // 
+            this.grpBoxGame.Controls.Add(this.lblRealWrongAnnswer);
+            this.grpBoxGame.Controls.Add(this.lblWrongAnswer);
             this.grpBoxGame.Controls.Add(this.lblRealCorrectAnswer);
             this.grpBoxGame.Controls.Add(this.lblCorrectAnswer);
             this.grpBoxGame.Controls.Add(this.btnB);
@@ -123,11 +127,31 @@ namespace FlagRace
             this.grpBoxGame.TabStop = false;
             this.grpBoxGame.Text = "Game Area";
             // 
+            // lblRealWrongAnnswer
+            // 
+            this.lblRealWrongAnnswer.AutoSize = true;
+            this.lblRealWrongAnnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRealWrongAnnswer.Location = new System.Drawing.Point(520, 492);
+            this.lblRealWrongAnnswer.Name = "lblRealWrongAnnswer";
+            this.lblRealWrongAnnswer.Size = new System.Drawing.Size(23, 25);
+            this.lblRealWrongAnnswer.TabIndex = 8;
+            this.lblRealWrongAnnswer.Text = "0";
+            // 
+            // lblWrongAnswer
+            // 
+            this.lblWrongAnswer.AutoSize = true;
+            this.lblWrongAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblWrongAnswer.Location = new System.Drawing.Point(351, 492);
+            this.lblWrongAnswer.Name = "lblWrongAnswer";
+            this.lblWrongAnswer.Size = new System.Drawing.Size(158, 25);
+            this.lblWrongAnswer.TabIndex = 7;
+            this.lblWrongAnswer.Text = "Wrong Answer  :";
+            // 
             // lblRealCorrectAnswer
             // 
             this.lblRealCorrectAnswer.AutoSize = true;
             this.lblRealCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRealCorrectAnswer.Location = new System.Drawing.Point(364, 492);
+            this.lblRealCorrectAnswer.Location = new System.Drawing.Point(228, 492);
             this.lblRealCorrectAnswer.Name = "lblRealCorrectAnswer";
             this.lblRealCorrectAnswer.Size = new System.Drawing.Size(23, 25);
             this.lblRealCorrectAnswer.TabIndex = 6;
@@ -137,7 +161,7 @@ namespace FlagRace
             // 
             this.lblCorrectAnswer.AutoSize = true;
             this.lblCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCorrectAnswer.Location = new System.Drawing.Point(186, 492);
+            this.lblCorrectAnswer.Location = new System.Drawing.Point(50, 492);
             this.lblCorrectAnswer.Name = "lblCorrectAnswer";
             this.lblCorrectAnswer.Size = new System.Drawing.Size(163, 25);
             this.lblCorrectAnswer.TabIndex = 5;
@@ -147,6 +171,7 @@ namespace FlagRace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(140)))), ((int)(((byte)(163)))));
             this.ClientSize = new System.Drawing.Size(858, 616);
             this.Controls.Add(this.grpBoxGame);
@@ -175,6 +200,8 @@ namespace FlagRace
         private System.Windows.Forms.GroupBox grpBoxGame;
         private System.Windows.Forms.Label lblRealCorrectAnswer;
         private System.Windows.Forms.Label lblCorrectAnswer;
+        private System.Windows.Forms.Label lblRealWrongAnnswer;
+        private System.Windows.Forms.Label lblWrongAnswer;
     }
 }
 
