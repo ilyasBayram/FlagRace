@@ -21,47 +21,37 @@ namespace FlagRace
 
         ArrayList usedNumbers = new ArrayList();
 
-  
-        #region variables
+        Flag flag = new Flag();
 
-        int numberReal, numberWrong, countCorrectAnswer, countWrongAnswer;
-
-
-        string continent, indexReal, indexFake;
-
-
-        string[] files;
-
-        #endregion
 
         #region methdos
-        void realNumberCreat()
+        void RealNumberCreat()
         {
-            numberReal = randomFile.Next(files.Length);
+            flag.NumberReal = randomFile.Next(flag.files.Length);
         }
 
-        void fakeNumberCreat()
+        void FakeNumberCreat()
         {
-            numberWrong = randomFile.Next(files.Length);
+            flag.NumberWrong = randomFile.Next(flag.files.Length);
         }
 
-        void score(object sender)
+        void Score(object sender)
         {
-            if ((sender as Button).Name=="btnA")
+            if ((sender as Button).Name=="BtnA")
             {
-                lblRealCorrectAnswer.Text = btnA.Text == indexReal ? Convert.ToString(countCorrectAnswer += 1) : Convert.ToString(countCorrectAnswer);
+                lblRealCorrectAnswer.Text = BtnA.Text == flag.IndexReal ? Convert.ToString(flag.CountCorrectAnswer += 1) : Convert.ToString(flag.CountCorrectAnswer);
 
-                lblRealWrongAnnswer.Text = btnA.Text == indexFake ? Convert.ToString(countWrongAnswer += 1) : Convert.ToString(countWrongAnswer);
+                lblRealWrongAnnswer.Text = BtnA.Text == flag.IndexFake ? Convert.ToString(flag.CountWrongAnswer += 1) : Convert.ToString(flag.CountWrongAnswer);
             }
-            else if ((sender as Button).Name == "btnB")
+            else if ((sender as Button).Name == "BtnB")
             {
-                lblRealCorrectAnswer.Text = btnB.Text == indexReal ? Convert.ToString(countCorrectAnswer += 1) : Convert.ToString(countCorrectAnswer);
+                lblRealCorrectAnswer.Text = BtnB.Text == flag.IndexReal ? Convert.ToString(flag.CountCorrectAnswer += 1) : Convert.ToString(flag.CountCorrectAnswer);
 
-                lblRealWrongAnnswer.Text = btnB.Text == indexFake ? Convert.ToString(countWrongAnswer += 1) : Convert.ToString(countWrongAnswer);
+                lblRealWrongAnnswer.Text = BtnB.Text == flag.IndexFake ? Convert.ToString(flag.CountWrongAnswer += 1) : Convert.ToString(flag.CountWrongAnswer);
             }
         }
 
-        void visibleTrueMembers()
+        void VvisibleTrueMembers()
         {
             lblRealCorrectAnswer.Visible = true;
 
@@ -71,14 +61,14 @@ namespace FlagRace
 
             lblWrongAnswer.Visible = true;
 
-            btnA.Visible = true;
+            BtnA.Visible = true;
 
-            btnB.Visible = true;
+            BtnB.Visible = true;
 
             pctBoxFlag.Visible = true;
         }
 
-        void visibleFlaseMember()
+        void VisibleFlaseMember()
         {
 
             lblRealCorrectAnswer.Visible = false;
@@ -89,44 +79,44 @@ namespace FlagRace
 
             lblWrongAnswer.Visible = false;
 
-            btnA.Visible = false;
+            BtnA.Visible = false;
 
-            btnB.Visible = false;
+            BtnB.Visible = false;
 
             pctBoxFlag.Visible = false;
         }
 
-        void makeCountZero()
+        void MakeCountZero()
         {
-            countCorrectAnswer = 0;
-            countWrongAnswer = 0;
+            flag.CountCorrectAnswer = 0;
+            flag.CountWrongAnswer = 0;
         }
 
-        void startButton()
+        void StartButton()
         {
-            if (btnStart.Text == "Start")
+            if (BtnStart.Text == "Start")
             {
-                btnStart.Text = "Exit";
+                BtnStart.Text = "Exit";
 
-                visibleTrueMembers();
+                VvisibleTrueMembers();
 
-                makeCountZero();
+                MakeCountZero();
 
                 cmBoxConitinents.Enabled = false;
 
-                continent = cmBoxConitinents.Text;
+                flag.Continent = cmBoxConitinents.Text;
 
-                files = Directory.GetFiles(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}", continent));
+               flag.files = Directory.GetFiles(string.Format(@"C:\Users\ilyas.bayram\source\repos\FlagRace\FlagRace\Image\{0}", flag.Continent));
 
-                getQuestion(continent, files);
+                GetQuestion(flag.Continent, flag.files);
             }
-            else if (btnStart.Text == "Exit")
+            else if (BtnStart.Text == "Exit")
             {
-                btnStart.Text = "Start";
+                BtnStart.Text = "Start";
 
-                visibleFlaseMember();
+                VisibleFlaseMember();
 
-                makeCountZero();
+                MakeCountZero();
 
                 lblRealCorrectAnswer.Text = "0";
 
@@ -138,34 +128,34 @@ namespace FlagRace
             }
         }
         
-        void getQuestion(string continent, string [] files)
+        void GetQuestion(string continent, string [] files)
         {
              
-            if (usedNumbers.Count == files.Length)
+            if (usedNumbers.Count == flag.files.Length)
 
                 usedNumbers.Clear();
 
-            realNumberCreat();
+            RealNumberCreat();
 
-            fakeNumberCreat();
+            FakeNumberCreat();
 
-            while (usedNumbers.Contains(numberReal) == true)
+            while (usedNumbers.Contains(flag.NumberReal) == true)
             {
-                realNumberCreat();
+                RealNumberCreat();
             }
 
-            while (numberReal==numberWrong)
+            while (flag.NumberReal==flag.NumberWrong)
             {
-                fakeNumberCreat();
+                FakeNumberCreat();
             }
 
-            usedNumbers.Add(numberReal);
+            usedNumbers.Add(flag.NumberReal);
 
-            indexReal = Path.GetFileNameWithoutExtension(files[numberReal]);
+            flag.IndexReal = Path.GetFileNameWithoutExtension(flag.files[flag.NumberReal]);
 
-            indexFake = Path.GetFileNameWithoutExtension(files[numberWrong]);
+            flag.IndexFake = Path.GetFileNameWithoutExtension(flag.files[flag.NumberWrong]);
 
-            Image imgReal = Image.FromFile(files[numberReal]);
+            Image imgReal = Image.FromFile(flag.files[flag.NumberReal]);
 
             pctBoxFlag.Image = imgReal;
 
@@ -173,13 +163,13 @@ namespace FlagRace
 
             if(randomButtonText.Next(0,2)==0)
             {
-                btnA.Text = indexReal;
-                btnB.Text = indexFake;
+                BtnA.Text = flag.IndexReal;
+                BtnB.Text = flag.IndexFake;
             }
             else
             {
-                btnA.Text = indexFake;
-                btnB.Text = indexReal;
+                BtnA.Text = flag.IndexFake;
+                BtnB.Text = flag.IndexReal;
             }
            
 
@@ -199,33 +189,33 @@ namespace FlagRace
         {
             cmBoxConitinents.Text = "Europe";
 
-            visibleFlaseMember();
+            VisibleFlaseMember();
 
         }
 
-        private void btnA_Click(object sender, EventArgs e)
+        private void BtnA_Click(object sender, EventArgs e)
         {
 
-            score(sender);
+            Score(sender);
 
-            getQuestion(continent, files);
+            GetQuestion(flag.Continent, flag.files);
 
             
 
         }
 
-        private void btnB_Click(object sender, EventArgs e)
+        private void BtnB_Click(object sender, EventArgs e)
         {
 
-            score(sender);
+            Score(sender);
 
-            getQuestion(continent, files);
+            GetQuestion(flag.Continent, flag.files);
 
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void BtnStart_Click(object sender, EventArgs e)
         {
-            startButton();
+            StartButton();
         
         }
 

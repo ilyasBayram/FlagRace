@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 
 namespace FlagRace
 {
-    public class ben
+    public class Flag
     {
-        public int numberReal;
 
-        public int numberWrong { get; set; }
+        public int NumberReal { get; set; }
 
-        public int countCorrectAnswer { get; set; }
-        public int countWrongAnswer { get; set; }
+        public int NumberWrong { get; set; }
 
-        public string continent { get; set; }
+        public int CountCorrectAnswer { get; set; }
+
+        public int CountWrongAnswer { get; set; }
+
+        public string Continent { get; set; }
         
-        public string indexReal { get; set; }
+        public string IndexReal { get; set; }
 
-        public string indexFake { get; set; }
+        public string IndexFake { get; set; }
 
         public string[] files { get; set; }
     }

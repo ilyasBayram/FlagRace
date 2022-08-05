@@ -31,10 +31,10 @@ namespace FlagRace
         {
             this.cmBoxConitinents = new System.Windows.Forms.ComboBox();
             this.lblContinent = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
+            this.BtnStart = new System.Windows.Forms.Button();
             this.pctBoxFlag = new System.Windows.Forms.PictureBox();
-            this.btnA = new System.Windows.Forms.Button();
-            this.btnB = new System.Windows.Forms.Button();
+            this.BtnA = new System.Windows.Forms.Button();
+            this.BtnB = new System.Windows.Forms.Button();
             this.grpBoxGame = new System.Windows.Forms.GroupBox();
             this.lblRealWrongAnnswer = new System.Windows.Forms.Label();
             this.lblWrongAnswer = new System.Windows.Forms.Label();
@@ -74,16 +74,16 @@ namespace FlagRace
             this.lblContinent.TabIndex = 1;
             this.lblContinent.Text = " Choose Continent";
             // 
-            // btnStart
+            // BtnStart
             // 
-            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.btnStart.Location = new System.Drawing.Point(24, 389);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(179, 63);
-            this.btnStart.TabIndex = 5;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            this.BtnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.BtnStart.Location = new System.Drawing.Point(24, 389);
+            this.BtnStart.Name = "BtnStart";
+            this.BtnStart.Size = new System.Drawing.Size(179, 63);
+            this.BtnStart.TabIndex = 5;
+            this.BtnStart.Text = "Start";
+            this.BtnStart.UseVisualStyleBackColor = false;
+            this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
             // pctBoxFlag
             // 
@@ -93,27 +93,27 @@ namespace FlagRace
             this.pctBoxFlag.TabIndex = 2;
             this.pctBoxFlag.TabStop = false;
             // 
-            // btnA
+            // BtnA
             // 
-            this.btnA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.btnA.Location = new System.Drawing.Point(55, 350);
-            this.btnA.Name = "btnA";
-            this.btnA.Size = new System.Drawing.Size(189, 63);
-            this.btnA.TabIndex = 3;
-            this.btnA.Text = "button1";
-            this.btnA.UseVisualStyleBackColor = false;
-            this.btnA.Click += new System.EventHandler(this.btnA_Click);
+            this.BtnA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.BtnA.Location = new System.Drawing.Point(55, 350);
+            this.BtnA.Name = "BtnA";
+            this.BtnA.Size = new System.Drawing.Size(189, 63);
+            this.BtnA.TabIndex = 3;
+            this.BtnA.Text = "button1";
+            this.BtnA.UseVisualStyleBackColor = false;
+            this.BtnA.Click += new System.EventHandler(this.BtnA_Click);
             // 
-            // btnB
+            // BtnB
             // 
-            this.btnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.btnB.Location = new System.Drawing.Point(356, 350);
-            this.btnB.Name = "btnB";
-            this.btnB.Size = new System.Drawing.Size(189, 63);
-            this.btnB.TabIndex = 4;
-            this.btnB.Text = "button2";
-            this.btnB.UseVisualStyleBackColor = false;
-            this.btnB.Click += new System.EventHandler(this.btnB_Click);
+            this.BtnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.BtnB.Location = new System.Drawing.Point(356, 350);
+            this.BtnB.Name = "BtnB";
+            this.BtnB.Size = new System.Drawing.Size(189, 63);
+            this.BtnB.TabIndex = 4;
+            this.BtnB.Text = "button2";
+            this.BtnB.UseVisualStyleBackColor = false;
+            this.BtnB.Click += new System.EventHandler(this.BtnB_Click);
             // 
             // grpBoxGame
             // 
@@ -121,8 +121,8 @@ namespace FlagRace
             this.grpBoxGame.Controls.Add(this.lblWrongAnswer);
             this.grpBoxGame.Controls.Add(this.lblRealCorrectAnswer);
             this.grpBoxGame.Controls.Add(this.lblCorrectAnswer);
-            this.grpBoxGame.Controls.Add(this.btnB);
-            this.grpBoxGame.Controls.Add(this.btnA);
+            this.grpBoxGame.Controls.Add(this.BtnB);
+            this.grpBoxGame.Controls.Add(this.BtnA);
             this.grpBoxGame.Controls.Add(this.pctBoxFlag);
             this.grpBoxGame.Location = new System.Drawing.Point(253, 39);
             this.grpBoxGame.Name = "grpBoxGame";
@@ -184,7 +184,7 @@ namespace FlagRace
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(858, 616);
             this.Controls.Add(this.grpBoxGame);
-            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.lblContinent);
             this.Controls.Add(this.cmBoxConitinents);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -207,10 +207,10 @@ namespace FlagRace
 
         private System.Windows.Forms.ComboBox cmBoxConitinents;
         private System.Windows.Forms.Label lblContinent;
-        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.PictureBox pctBoxFlag;
-        private System.Windows.Forms.Button btnA;
-        private System.Windows.Forms.Button btnB;
+        private System.Windows.Forms.Button BtnA;
+        private System.Windows.Forms.Button BtnB;
         private System.Windows.Forms.GroupBox grpBoxGame;
         private System.Windows.Forms.Label lblRealCorrectAnswer;
         private System.Windows.Forms.Label lblCorrectAnswer;
