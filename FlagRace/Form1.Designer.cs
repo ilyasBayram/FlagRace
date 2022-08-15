@@ -56,9 +56,7 @@ namespace FlagRace
             "Africa",
             "Asia",
             "Australia",
-            "Europe",
-            "Antartica",
-            ""});
+            "Europe"});
             this.cmBoxConitinents.Location = new System.Drawing.Point(18, 130);
             this.cmBoxConitinents.Name = "cmBoxConitinents";
             this.cmBoxConitinents.Size = new System.Drawing.Size(218, 28);

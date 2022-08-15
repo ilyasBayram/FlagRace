@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace FlagRace
 {
@@ -23,6 +25,7 @@ namespace FlagRace
 
         public string IndexFake { get; set; }
 
-        public string[] files { get; set; }
+        public string[] Files { get; set; }
+
     }
 }
