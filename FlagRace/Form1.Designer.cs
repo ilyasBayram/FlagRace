@@ -31,17 +31,20 @@ namespace FlagRace
         {
             this.cmBoxConitinents = new System.Windows.Forms.ComboBox();
             this.lblContinent = new System.Windows.Forms.Label();
-            this.BtnStart = new System.Windows.Forms.Button();
-            this.pctBoxFlag = new System.Windows.Forms.PictureBox();
-            this.BtnA = new System.Windows.Forms.Button();
-            this.BtnB = new System.Windows.Forms.Button();
-            this.grpBoxGame = new System.Windows.Forms.GroupBox();
+            this.BtnStart3 = new System.Windows.Forms.Button();
+            this.BtnStart2 = new System.Windows.Forms.Button();
+            this.BtnStart1 = new System.Windows.Forms.Button();
+            this.LblGameModes = new System.Windows.Forms.Label();
             this.lblRealWrongAnnswer = new System.Windows.Forms.Label();
             this.lblWrongAnswer = new System.Windows.Forms.Label();
             this.lblRealCorrectAnswer = new System.Windows.Forms.Label();
             this.lblCorrectAnswer = new System.Windows.Forms.Label();
+            this.BtnB = new System.Windows.Forms.Button();
+            this.BtnA = new System.Windows.Forms.Button();
+            this.pctBoxFlag = new System.Windows.Forms.PictureBox();
+            this.checkBox = new System.Windows.Forms.CheckBox();
+            this.lblCountryName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFlag)).BeginInit();
-            this.grpBoxGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmBoxConitinents
@@ -72,72 +75,58 @@ namespace FlagRace
             this.lblContinent.TabIndex = 1;
             this.lblContinent.Text = " Choose Continent";
             // 
-            // BtnStart
+            // BtnStart3
             // 
-            this.BtnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.BtnStart.Location = new System.Drawing.Point(24, 389);
-            this.BtnStart.Name = "BtnStart";
-            this.BtnStart.Size = new System.Drawing.Size(179, 63);
-            this.BtnStart.TabIndex = 5;
-            this.BtnStart.Text = "Start";
-            this.BtnStart.UseVisualStyleBackColor = false;
-            this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
+            this.BtnStart3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.BtnStart3.Location = new System.Drawing.Point(34, 503);
+            this.BtnStart3.Name = "BtnStart3";
+            this.BtnStart3.Size = new System.Drawing.Size(179, 63);
+            this.BtnStart3.TabIndex = 5;
+            this.BtnStart3.Text = "Picture vs Buttons";
+            this.BtnStart3.UseVisualStyleBackColor = false;
+            this.BtnStart3.Click += new System.EventHandler(this.BtnStart3_Click);
             // 
-            // pctBoxFlag
+            // BtnStart2
             // 
-            this.pctBoxFlag.Location = new System.Drawing.Point(142, 87);
-            this.pctBoxFlag.Name = "pctBoxFlag";
-            this.pctBoxFlag.Size = new System.Drawing.Size(300, 188);
-            this.pctBoxFlag.TabIndex = 2;
-            this.pctBoxFlag.TabStop = false;
+            this.BtnStart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.BtnStart2.Location = new System.Drawing.Point(34, 409);
+            this.BtnStart2.Name = "BtnStart2";
+            this.BtnStart2.Size = new System.Drawing.Size(179, 63);
+            this.BtnStart2.TabIndex = 7;
+            this.BtnStart2.Text = "Button vs Pictures";
+            this.BtnStart2.UseVisualStyleBackColor = false;
+            this.BtnStart2.Click += new System.EventHandler(this.BtnStart2_Click);
             // 
-            // BtnA
+            // BtnStart1
             // 
-            this.BtnA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.BtnA.Location = new System.Drawing.Point(55, 350);
-            this.BtnA.Name = "BtnA";
-            this.BtnA.Size = new System.Drawing.Size(189, 63);
-            this.BtnA.TabIndex = 3;
-            this.BtnA.Text = "button1";
-            this.BtnA.UseVisualStyleBackColor = false;
-            this.BtnA.Click += new System.EventHandler(this.BtnA_Click);
+            this.BtnStart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.BtnStart1.Location = new System.Drawing.Point(34, 314);
+            this.BtnStart1.Name = "BtnStart1";
+            this.BtnStart1.Size = new System.Drawing.Size(179, 63);
+            this.BtnStart1.TabIndex = 8;
+            this.BtnStart1.Text = "Only Picture";
+            this.BtnStart1.UseVisualStyleBackColor = false;
+            this.BtnStart1.Click += new System.EventHandler(this.BtnStart1_Click);
             // 
-            // BtnB
+            // LblGameModes
             // 
-            this.BtnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.BtnB.Location = new System.Drawing.Point(356, 350);
-            this.BtnB.Name = "BtnB";
-            this.BtnB.Size = new System.Drawing.Size(189, 63);
-            this.BtnB.TabIndex = 4;
-            this.BtnB.Text = "button2";
-            this.BtnB.UseVisualStyleBackColor = false;
-            this.BtnB.Click += new System.EventHandler(this.BtnB_Click);
-            // 
-            // grpBoxGame
-            // 
-            this.grpBoxGame.Controls.Add(this.lblRealWrongAnnswer);
-            this.grpBoxGame.Controls.Add(this.lblWrongAnswer);
-            this.grpBoxGame.Controls.Add(this.lblRealCorrectAnswer);
-            this.grpBoxGame.Controls.Add(this.lblCorrectAnswer);
-            this.grpBoxGame.Controls.Add(this.BtnB);
-            this.grpBoxGame.Controls.Add(this.BtnA);
-            this.grpBoxGame.Controls.Add(this.pctBoxFlag);
-            this.grpBoxGame.Location = new System.Drawing.Point(253, 39);
-            this.grpBoxGame.Name = "grpBoxGame";
-            this.grpBoxGame.Size = new System.Drawing.Size(581, 564);
-            this.grpBoxGame.TabIndex = 6;
-            this.grpBoxGame.TabStop = false;
-            this.grpBoxGame.Text = "Game Area";
+            this.LblGameModes.AutoSize = true;
+            this.LblGameModes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblGameModes.Location = new System.Drawing.Point(40, 244);
+            this.LblGameModes.Name = "LblGameModes";
+            this.LblGameModes.Size = new System.Drawing.Size(158, 29);
+            this.LblGameModes.TabIndex = 9;
+            this.LblGameModes.Text = "Game Modes";
             // 
             // lblRealWrongAnnswer
             // 
             this.lblRealWrongAnnswer.AutoSize = true;
             this.lblRealWrongAnnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblRealWrongAnnswer.ForeColor = System.Drawing.Color.Black;
-            this.lblRealWrongAnnswer.Location = new System.Drawing.Point(520, 492);
+            this.lblRealWrongAnnswer.Location = new System.Drawing.Point(768, 514);
             this.lblRealWrongAnnswer.Name = "lblRealWrongAnnswer";
             this.lblRealWrongAnnswer.Size = new System.Drawing.Size(23, 25);
-            this.lblRealWrongAnnswer.TabIndex = 8;
+            this.lblRealWrongAnnswer.TabIndex = 16;
             this.lblRealWrongAnnswer.Text = "0";
             // 
             // lblWrongAnswer
@@ -145,10 +134,10 @@ namespace FlagRace
             this.lblWrongAnswer.AutoSize = true;
             this.lblWrongAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblWrongAnswer.ForeColor = System.Drawing.Color.Black;
-            this.lblWrongAnswer.Location = new System.Drawing.Point(351, 492);
+            this.lblWrongAnswer.Location = new System.Drawing.Point(599, 514);
             this.lblWrongAnswer.Name = "lblWrongAnswer";
             this.lblWrongAnswer.Size = new System.Drawing.Size(158, 25);
-            this.lblWrongAnswer.TabIndex = 7;
+            this.lblWrongAnswer.TabIndex = 15;
             this.lblWrongAnswer.Text = "Wrong Answer  :";
             // 
             // lblRealCorrectAnswer
@@ -156,10 +145,10 @@ namespace FlagRace
             this.lblRealCorrectAnswer.AutoSize = true;
             this.lblRealCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblRealCorrectAnswer.ForeColor = System.Drawing.Color.Black;
-            this.lblRealCorrectAnswer.Location = new System.Drawing.Point(228, 492);
+            this.lblRealCorrectAnswer.Location = new System.Drawing.Point(476, 514);
             this.lblRealCorrectAnswer.Name = "lblRealCorrectAnswer";
             this.lblRealCorrectAnswer.Size = new System.Drawing.Size(23, 25);
-            this.lblRealCorrectAnswer.TabIndex = 6;
+            this.lblRealCorrectAnswer.TabIndex = 14;
             this.lblRealCorrectAnswer.Text = "0";
             // 
             // lblCorrectAnswer
@@ -167,11 +156,61 @@ namespace FlagRace
             this.lblCorrectAnswer.AutoSize = true;
             this.lblCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblCorrectAnswer.ForeColor = System.Drawing.Color.Black;
-            this.lblCorrectAnswer.Location = new System.Drawing.Point(50, 492);
+            this.lblCorrectAnswer.Location = new System.Drawing.Point(298, 514);
             this.lblCorrectAnswer.Name = "lblCorrectAnswer";
             this.lblCorrectAnswer.Size = new System.Drawing.Size(163, 25);
-            this.lblCorrectAnswer.TabIndex = 5;
+            this.lblCorrectAnswer.TabIndex = 13;
             this.lblCorrectAnswer.Text = "Correct Answer  :";
+            // 
+            // BtnB
+            // 
+            this.BtnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.BtnB.Location = new System.Drawing.Point(604, 372);
+            this.BtnB.Name = "BtnB";
+            this.BtnB.Size = new System.Drawing.Size(189, 63);
+            this.BtnB.TabIndex = 12;
+            this.BtnB.Text = "button2";
+            this.BtnB.UseVisualStyleBackColor = false;
+            this.BtnB.Click += new System.EventHandler(this.BtnB_Click);
+            // 
+            // BtnA
+            // 
+            this.BtnA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.BtnA.Location = new System.Drawing.Point(303, 372);
+            this.BtnA.Name = "BtnA";
+            this.BtnA.Size = new System.Drawing.Size(189, 63);
+            this.BtnA.TabIndex = 11;
+            this.BtnA.Text = "button1";
+            this.BtnA.UseVisualStyleBackColor = false;
+            this.BtnA.Click += new System.EventHandler(this.BtnA_Click);
+            // 
+            // pctBoxFlag
+            // 
+            this.pctBoxFlag.Location = new System.Drawing.Point(390, 109);
+            this.pctBoxFlag.Name = "pctBoxFlag";
+            this.pctBoxFlag.Size = new System.Drawing.Size(300, 188);
+            this.pctBoxFlag.TabIndex = 10;
+            this.pctBoxFlag.TabStop = false;
+            // 
+            // checkBox
+            // 
+            this.checkBox.AutoSize = true;
+            this.checkBox.Location = new System.Drawing.Point(473, 325);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(150, 24);
+            this.checkBox.TabIndex = 17;
+            this.checkBox.Text = "Show the name ";
+            this.checkBox.UseVisualStyleBackColor = true;
+            this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
+            // 
+            // lblCountryName
+            // 
+            this.lblCountryName.AutoSize = true;
+            this.lblCountryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCountryName.Location = new System.Drawing.Point(467, 393);
+            this.lblCountryName.Name = "lblCountryName";
+            this.lblCountryName.Size = new System.Drawing.Size(0, 36);
+            this.lblCountryName.TabIndex = 18;
             // 
             // Form1
             // 
@@ -181,8 +220,19 @@ namespace FlagRace
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(140)))), ((int)(((byte)(163)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(858, 616);
-            this.Controls.Add(this.grpBoxGame);
-            this.Controls.Add(this.BtnStart);
+            this.Controls.Add(this.lblCountryName);
+            this.Controls.Add(this.checkBox);
+            this.Controls.Add(this.lblRealWrongAnnswer);
+            this.Controls.Add(this.lblWrongAnswer);
+            this.Controls.Add(this.lblRealCorrectAnswer);
+            this.Controls.Add(this.lblCorrectAnswer);
+            this.Controls.Add(this.BtnB);
+            this.Controls.Add(this.BtnA);
+            this.Controls.Add(this.pctBoxFlag);
+            this.Controls.Add(this.LblGameModes);
+            this.Controls.Add(this.BtnStart1);
+            this.Controls.Add(this.BtnStart2);
+            this.Controls.Add(this.BtnStart3);
             this.Controls.Add(this.lblContinent);
             this.Controls.Add(this.cmBoxConitinents);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -194,8 +244,6 @@ namespace FlagRace
             this.Text = "Flag Race";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFlag)).EndInit();
-            this.grpBoxGame.ResumeLayout(false);
-            this.grpBoxGame.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,15 +253,19 @@ namespace FlagRace
 
         private System.Windows.Forms.ComboBox cmBoxConitinents;
         private System.Windows.Forms.Label lblContinent;
-        private System.Windows.Forms.Button BtnStart;
-        private System.Windows.Forms.PictureBox pctBoxFlag;
-        private System.Windows.Forms.Button BtnA;
-        private System.Windows.Forms.Button BtnB;
-        private System.Windows.Forms.GroupBox grpBoxGame;
-        private System.Windows.Forms.Label lblRealCorrectAnswer;
-        private System.Windows.Forms.Label lblCorrectAnswer;
+        private System.Windows.Forms.Button BtnStart3;
+        private System.Windows.Forms.Button BtnStart2;
+        private System.Windows.Forms.Button BtnStart1;
+        private System.Windows.Forms.Label LblGameModes;
         private System.Windows.Forms.Label lblRealWrongAnnswer;
         private System.Windows.Forms.Label lblWrongAnswer;
+        private System.Windows.Forms.Label lblRealCorrectAnswer;
+        private System.Windows.Forms.Label lblCorrectAnswer;
+        private System.Windows.Forms.Button BtnB;
+        private System.Windows.Forms.Button BtnA;
+        private System.Windows.Forms.PictureBox pctBoxFlag;
+        private System.Windows.Forms.CheckBox checkBox;
+        private System.Windows.Forms.Label lblCountryName;
     }
 }
 
