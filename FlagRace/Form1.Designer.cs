@@ -44,7 +44,13 @@ namespace FlagRace
             this.pctBoxFlag = new System.Windows.Forms.PictureBox();
             this.checkBox = new System.Windows.Forms.CheckBox();
             this.lblCountryName = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lblGame2CountryName = new System.Windows.Forms.Label();
+            this.pctBoxGame2A = new System.Windows.Forms.PictureBox();
+            this.pctBoxGame2B = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFlag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGame2A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGame2B)).BeginInit();
             this.SuspendLayout();
             // 
             // cmBoxConitinents
@@ -176,7 +182,7 @@ namespace FlagRace
             // BtnA
             // 
             this.BtnA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.BtnA.Location = new System.Drawing.Point(303, 372);
+            this.BtnA.Location = new System.Drawing.Point(310, 372);
             this.BtnA.Name = "BtnA";
             this.BtnA.Size = new System.Drawing.Size(189, 63);
             this.BtnA.TabIndex = 11;
@@ -207,10 +213,49 @@ namespace FlagRace
             // 
             this.lblCountryName.AutoSize = true;
             this.lblCountryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCountryName.Location = new System.Drawing.Point(467, 393);
+            this.lblCountryName.Location = new System.Drawing.Point(467, 395);
             this.lblCountryName.Name = "lblCountryName";
             this.lblCountryName.Size = new System.Drawing.Size(0, 36);
             this.lblCountryName.TabIndex = 18;
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnNext.Location = new System.Drawing.Point(444, 467);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(189, 63);
+            this.btnNext.TabIndex = 19;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // lblGame2CountryName
+            // 
+            this.lblGame2CountryName.AutoSize = true;
+            this.lblGame2CountryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGame2CountryName.Location = new System.Drawing.Point(456, 169);
+            this.lblGame2CountryName.Name = "lblGame2CountryName";
+            this.lblGame2CountryName.Size = new System.Drawing.Size(126, 46);
+            this.lblGame2CountryName.TabIndex = 20;
+            this.lblGame2CountryName.Text = "label1";
+            // 
+            // pctBoxGame2A
+            // 
+            this.pctBoxGame2A.Location = new System.Drawing.Point(274, 309);
+            this.pctBoxGame2A.Name = "pctBoxGame2A";
+            this.pctBoxGame2A.Size = new System.Drawing.Size(207, 161);
+            this.pctBoxGame2A.TabIndex = 21;
+            this.pctBoxGame2A.TabStop = false;
+            this.pctBoxGame2A.Click += new System.EventHandler(this.pctBoxGame2A_Click);
+            // 
+            // pctBoxGame2B
+            // 
+            this.pctBoxGame2B.Location = new System.Drawing.Point(578, 309);
+            this.pctBoxGame2B.Name = "pctBoxGame2B";
+            this.pctBoxGame2B.Size = new System.Drawing.Size(215, 156);
+            this.pctBoxGame2B.TabIndex = 22;
+            this.pctBoxGame2B.TabStop = false;
+            this.pctBoxGame2B.Click += new System.EventHandler(this.pctBoxGame2B_Click);
             // 
             // Form1
             // 
@@ -220,6 +265,10 @@ namespace FlagRace
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(140)))), ((int)(((byte)(163)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(858, 616);
+            this.Controls.Add(this.pctBoxGame2B);
+            this.Controls.Add(this.pctBoxGame2A);
+            this.Controls.Add(this.lblGame2CountryName);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblCountryName);
             this.Controls.Add(this.checkBox);
             this.Controls.Add(this.lblRealWrongAnnswer);
@@ -244,6 +293,8 @@ namespace FlagRace
             this.Text = "Flag Race";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFlag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGame2A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGame2B)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,6 +317,10 @@ namespace FlagRace
         private System.Windows.Forms.PictureBox pctBoxFlag;
         private System.Windows.Forms.CheckBox checkBox;
         private System.Windows.Forms.Label lblCountryName;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblGame2CountryName;
+        private System.Windows.Forms.PictureBox pctBoxGame2A;
+        private System.Windows.Forms.PictureBox pctBoxGame2B;
     }
 }
 

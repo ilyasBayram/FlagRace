@@ -60,6 +60,22 @@ namespace FlagRace
             }
         }
 
+        void PictureScore( object sender)
+        {
+            if ((sender as PictureBox).Name == "pctBoxGame2A")
+            {
+                lblRealCorrectAnswer.Text = BtnA.Text == flag.IndexReal ? Convert.ToString(flag.CountCorrectAnswer += 1) : Convert.ToString(flag.CountCorrectAnswer);
+
+                lblRealWrongAnnswer.Text = BtnA.Text == flag.IndexFake ? Convert.ToString(flag.CountWrongAnswer += 1) : Convert.ToString(flag.CountWrongAnswer);
+            }
+            else if ((sender as PictureBox).Name == "pctBoxGame2B")
+            {
+                lblRealCorrectAnswer.Text = BtnB.Text == flag.IndexReal ? Convert.ToString(flag.CountCorrectAnswer += 1) : Convert.ToString(flag.CountCorrectAnswer);
+
+                lblRealWrongAnnswer.Text = BtnB.Text == flag.IndexFake ? Convert.ToString(flag.CountWrongAnswer += 1) : Convert.ToString(flag.CountWrongAnswer);
+            }
+        }
+
         void VvisibleTrueMembers()
         {
             lblRealCorrectAnswer.Visible = true;
@@ -75,8 +91,6 @@ namespace FlagRace
             BtnB.Visible = true;
 
             pctBoxFlag.Visible = true;
-
-
 
         }
 
@@ -97,6 +111,11 @@ namespace FlagRace
 
             pctBoxFlag.Visible = false;
 
+            checkBox.Visible = false;
+
+            btnNext.Visible = false;
+
+            lblGame2CountryName.Visible = false;
 
         }
 
@@ -134,6 +153,10 @@ namespace FlagRace
 
                 lblWrongAnswer.Visible = false;
 
+                checkBox.Visible = true;
+
+                btnNext.Visible = true;
+
                 GetContinent();
 
                 files.GetPicture(flag);
@@ -149,9 +172,10 @@ namespace FlagRace
 
                 MakeCountZero();
 
-                BtnStart1.Enabled = true;
-
                 BtnStart2.Enabled = true;
+
+                BtnStart3.Enabled = true;
+
 
                 lblRealCorrectAnswer.Text = "0";
 
@@ -161,6 +185,114 @@ namespace FlagRace
 
                 usedNumbers.Clear();
             }
+        }
+
+        void StartButton2()
+        {
+            if (BtnStart2.Text == "Button vs Pictures")
+            {
+                BtnStart2.Text = "Exit";
+
+                VvisibleTrueMembers();
+
+                MakeCountZero();
+
+                cmBoxConitinents.Enabled = false;
+
+                BtnStart1.Enabled = false;
+
+                BtnStart3.Enabled = false;
+
+                pctBoxFlag.Visible = false;
+
+                BtnB.Visible = false;
+
+                BtnA.Visible = false;
+
+                lblRealCorrectAnswer.Visible = true;
+
+                lblRealWrongAnnswer.Visible = true;
+
+                lblCorrectAnswer.Visible = true;
+
+                lblWrongAnswer.Visible = true;
+
+                lblGame2CountryName.Visible = true;
+
+                pctBoxGame2A.Visible = true;
+
+                pctBoxGame2B.Visible = true;
+
+                GetContinent();
+
+                files.GetPicture(flag);
+
+                GetQuestion();
+
+
+
+                lblGame2CountryName.Text = flag.IndexReal;
+
+                flag.IndexReal = Path.GetFileNameWithoutExtension(flag.Files[flag.NumberReal]);
+
+                Image imgReal = Image.FromFile(flag.Files[flag.NumberReal]);
+
+                Image imgFake = Image.FromFile(flag.Files[flag.NumberWrong]);
+
+
+                if (randomButtonText.Next(0, 2) == 0)
+                {
+
+                    pctBoxGame2A.Image = imgReal;
+
+                    pctBoxGame2A.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    pctBoxGame2B.Image = imgFake;
+
+                    pctBoxGame2B.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                }
+                else
+                {
+                    pctBoxGame2A.Image = imgFake;
+
+                    pctBoxGame2A.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    pctBoxGame2B.Image = imgReal;
+
+                    pctBoxGame2B.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                }
+
+
+            }
+            else if (BtnStart2.Text == "Exit")
+            {
+                BtnStart2.Text = "Button vs Pictures";
+
+                VisibleFalseMember();
+
+                MakeCountZero();
+
+                BtnStart1.Enabled = true;
+
+                BtnStart3.Enabled = true;
+
+                lblGame2CountryName.Visible = false;
+
+                pctBoxGame2A.Visible = false;
+
+                pctBoxGame2B.Visible = false;
+
+                lblRealCorrectAnswer.Text = "0";
+
+                lblRealWrongAnnswer.Text = "0";
+
+                cmBoxConitinents.Enabled = true;
+
+                usedNumbers.Clear();
+            }
+
         }
 
         void StartButton3()
@@ -298,15 +430,12 @@ namespace FlagRace
 
             StartButton1();
 
+
         }
 
         private void BtnStart2_Click(object sender, EventArgs e)
         {
-            BtnStart1.Enabled = false;
-
-            BtnStart3.Enabled = false;
-
-            cmBoxConitinents.Enabled = false;
+            StartButton2();
         }
 
         private void BtnStart3_Click(object sender, EventArgs e)
@@ -333,6 +462,28 @@ namespace FlagRace
             }
                 
                 
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            GetQuestion();
+
+            
+
+            if (checkBox.Checked)
+            {
+                checkBox.Checked = false;
+            }
+        }
+
+        private void pctBoxGame2B_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pctBoxGame2A_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
