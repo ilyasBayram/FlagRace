@@ -31,7 +31,6 @@ namespace FlagRace
         {
             this.cmBoxConitinents = new System.Windows.Forms.ComboBox();
             this.lblContinent = new System.Windows.Forms.Label();
-            this.BtnStart3 = new System.Windows.Forms.Button();
             this.BtnStart2 = new System.Windows.Forms.Button();
             this.BtnStart1 = new System.Windows.Forms.Button();
             this.LblGameModes = new System.Windows.Forms.Label();
@@ -45,12 +44,7 @@ namespace FlagRace
             this.checkBox = new System.Windows.Forms.CheckBox();
             this.lblCountryName = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
-            this.lblGame2CountryName = new System.Windows.Forms.Label();
-            this.pctBoxGame2A = new System.Windows.Forms.PictureBox();
-            this.pctBoxGame2B = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFlag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGame2A)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGame2B)).BeginInit();
             this.SuspendLayout();
             // 
             // cmBoxConitinents
@@ -81,21 +75,10 @@ namespace FlagRace
             this.lblContinent.TabIndex = 1;
             this.lblContinent.Text = " Choose Continent";
             // 
-            // BtnStart3
-            // 
-            this.BtnStart3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.BtnStart3.Location = new System.Drawing.Point(34, 503);
-            this.BtnStart3.Name = "BtnStart3";
-            this.BtnStart3.Size = new System.Drawing.Size(179, 63);
-            this.BtnStart3.TabIndex = 5;
-            this.BtnStart3.Text = "Picture vs Buttons";
-            this.BtnStart3.UseVisualStyleBackColor = false;
-            this.BtnStart3.Click += new System.EventHandler(this.BtnStart3_Click);
-            // 
             // BtnStart2
             // 
             this.BtnStart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.BtnStart2.Location = new System.Drawing.Point(34, 409);
+            this.BtnStart2.Location = new System.Drawing.Point(34, 457);
             this.BtnStart2.Name = "BtnStart2";
             this.BtnStart2.Size = new System.Drawing.Size(179, 63);
             this.BtnStart2.TabIndex = 7;
@@ -229,34 +212,6 @@ namespace FlagRace
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // lblGame2CountryName
-            // 
-            this.lblGame2CountryName.AutoSize = true;
-            this.lblGame2CountryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGame2CountryName.Location = new System.Drawing.Point(456, 169);
-            this.lblGame2CountryName.Name = "lblGame2CountryName";
-            this.lblGame2CountryName.Size = new System.Drawing.Size(126, 46);
-            this.lblGame2CountryName.TabIndex = 20;
-            this.lblGame2CountryName.Text = "label1";
-            // 
-            // pctBoxGame2A
-            // 
-            this.pctBoxGame2A.Location = new System.Drawing.Point(274, 309);
-            this.pctBoxGame2A.Name = "pctBoxGame2A";
-            this.pctBoxGame2A.Size = new System.Drawing.Size(207, 161);
-            this.pctBoxGame2A.TabIndex = 21;
-            this.pctBoxGame2A.TabStop = false;
-            this.pctBoxGame2A.Click += new System.EventHandler(this.pctBoxGame2A_Click);
-            // 
-            // pctBoxGame2B
-            // 
-            this.pctBoxGame2B.Location = new System.Drawing.Point(578, 309);
-            this.pctBoxGame2B.Name = "pctBoxGame2B";
-            this.pctBoxGame2B.Size = new System.Drawing.Size(215, 156);
-            this.pctBoxGame2B.TabIndex = 22;
-            this.pctBoxGame2B.TabStop = false;
-            this.pctBoxGame2B.Click += new System.EventHandler(this.pctBoxGame2B_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -265,9 +220,6 @@ namespace FlagRace
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(140)))), ((int)(((byte)(163)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(858, 616);
-            this.Controls.Add(this.pctBoxGame2B);
-            this.Controls.Add(this.pctBoxGame2A);
-            this.Controls.Add(this.lblGame2CountryName);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblCountryName);
             this.Controls.Add(this.checkBox);
@@ -281,7 +233,6 @@ namespace FlagRace
             this.Controls.Add(this.LblGameModes);
             this.Controls.Add(this.BtnStart1);
             this.Controls.Add(this.BtnStart2);
-            this.Controls.Add(this.BtnStart3);
             this.Controls.Add(this.lblContinent);
             this.Controls.Add(this.cmBoxConitinents);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -293,8 +244,6 @@ namespace FlagRace
             this.Text = "Flag Race";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFlag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGame2A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGame2B)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,7 +253,6 @@ namespace FlagRace
 
         private System.Windows.Forms.ComboBox cmBoxConitinents;
         private System.Windows.Forms.Label lblContinent;
-        private System.Windows.Forms.Button BtnStart3;
         private System.Windows.Forms.Button BtnStart2;
         private System.Windows.Forms.Button BtnStart1;
         private System.Windows.Forms.Label LblGameModes;
@@ -318,9 +266,6 @@ namespace FlagRace
         private System.Windows.Forms.CheckBox checkBox;
         private System.Windows.Forms.Label lblCountryName;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Label lblGame2CountryName;
-        private System.Windows.Forms.PictureBox pctBoxGame2A;
-        private System.Windows.Forms.PictureBox pctBoxGame2B;
     }
 }
 

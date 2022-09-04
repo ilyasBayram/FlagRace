@@ -46,7 +46,7 @@ namespace FlagRace
 
         void Score(object sender)
         {
-            if ((sender as Button).Name=="BtnA")
+            if ((sender as Button).Name == "BtnA")
             {
                 lblRealCorrectAnswer.Text = BtnA.Text == flag.IndexReal ? Convert.ToString(flag.CountCorrectAnswer += 1) : Convert.ToString(flag.CountCorrectAnswer);
 
@@ -60,7 +60,7 @@ namespace FlagRace
             }
         }
 
-        void PictureScore( object sender)
+        void PictureScore(object sender)
         {
             if ((sender as PictureBox).Name == "pctBoxGame2A")
             {
@@ -115,8 +115,6 @@ namespace FlagRace
 
             btnNext.Visible = false;
 
-            lblGame2CountryName.Visible = false;
-
         }
 
         void MakeCountZero()
@@ -136,8 +134,6 @@ namespace FlagRace
                 MakeCountZero();
 
                 cmBoxConitinents.Enabled = false;
-
-                BtnStart3.Enabled = false;
 
                 BtnStart2.Enabled = false;
 
@@ -174,9 +170,6 @@ namespace FlagRace
 
                 BtnStart2.Enabled = true;
 
-                BtnStart3.Enabled = true;
-
-
                 lblRealCorrectAnswer.Text = "0";
 
                 lblRealWrongAnnswer.Text = "0";
@@ -201,14 +194,6 @@ namespace FlagRace
 
                 BtnStart1.Enabled = false;
 
-                BtnStart3.Enabled = false;
-
-                pctBoxFlag.Visible = false;
-
-                BtnB.Visible = false;
-
-                BtnA.Visible = false;
-
                 lblRealCorrectAnswer.Visible = true;
 
                 lblRealWrongAnnswer.Visible = true;
@@ -217,53 +202,12 @@ namespace FlagRace
 
                 lblWrongAnswer.Visible = true;
 
-                lblGame2CountryName.Visible = true;
-
-                pctBoxGame2A.Visible = true;
-
-                pctBoxGame2B.Visible = true;
 
                 GetContinent();
 
                 files.GetPicture(flag);
 
                 GetQuestion();
-
-
-
-                lblGame2CountryName.Text = flag.IndexReal;
-
-                flag.IndexReal = Path.GetFileNameWithoutExtension(flag.Files[flag.NumberReal]);
-
-                Image imgReal = Image.FromFile(flag.Files[flag.NumberReal]);
-
-                Image imgFake = Image.FromFile(flag.Files[flag.NumberWrong]);
-
-
-                if (randomButtonText.Next(0, 2) == 0)
-                {
-
-                    pctBoxGame2A.Image = imgReal;
-
-                    pctBoxGame2A.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                    pctBoxGame2B.Image = imgFake;
-
-                    pctBoxGame2B.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                }
-                else
-                {
-                    pctBoxGame2A.Image = imgFake;
-
-                    pctBoxGame2A.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                    pctBoxGame2B.Image = imgReal;
-
-                    pctBoxGame2B.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                }
-
 
             }
             else if (BtnStart2.Text == "Exit")
@@ -276,14 +220,6 @@ namespace FlagRace
 
                 BtnStart1.Enabled = true;
 
-                BtnStart3.Enabled = true;
-
-                lblGame2CountryName.Visible = false;
-
-                pctBoxGame2A.Visible = false;
-
-                pctBoxGame2B.Visible = false;
-
                 lblRealCorrectAnswer.Text = "0";
 
                 lblRealWrongAnnswer.Text = "0";
@@ -295,53 +231,9 @@ namespace FlagRace
 
         }
 
-        void StartButton3()
-        {
-            if (BtnStart3.Text == "Picture vs Buttons")
-            {
-                BtnStart3.Text = "Exit";
-
-                VvisibleTrueMembers();
-
-                MakeCountZero();
-
-                cmBoxConitinents.Enabled = false;
-
-                BtnStart1.Enabled = false;
-
-                BtnStart2.Enabled = false;
-
-                GetContinent();
-
-                files.GetPicture(flag);
-
-                GetQuestion();
-            }
-            else if (BtnStart3.Text == "Exit")
-            {
-                BtnStart3.Text = "Only Picture";
-
-                VisibleFalseMember();
-
-                MakeCountZero();
-
-                BtnStart1.Enabled = true;
-
-                BtnStart2.Enabled = true;
-
-                lblRealCorrectAnswer.Text = "0";
-
-                lblRealWrongAnnswer.Text = "0";
-
-                cmBoxConitinents.Enabled = true;
-
-                usedNumbers.Clear();
-            }
-        }
-        
         void GetQuestion()
         {
-             
+
             if (usedNumbers.Count == flag.Files.Length)
 
                 usedNumbers.Clear();
@@ -355,7 +247,7 @@ namespace FlagRace
                 RealNumberCreat();
             }
 
-            while (flag.NumberReal==flag.NumberWrong)
+            while (flag.NumberReal == flag.NumberWrong)
             {
                 FakeNumberCreat();
             }
@@ -372,7 +264,7 @@ namespace FlagRace
 
             pctBoxFlag.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            if(randomButtonText.Next(0,2)==0)
+            if (randomButtonText.Next(0, 2) == 0)
             {
                 BtnA.Text = flag.IndexReal;
                 BtnB.Text = flag.IndexFake;
@@ -382,12 +274,12 @@ namespace FlagRace
                 BtnA.Text = flag.IndexFake;
                 BtnB.Text = flag.IndexReal;
             }
-           
+
 
         }
 
-        
-        
+
+
         #endregion
 
         public Form1()
@@ -412,7 +304,7 @@ namespace FlagRace
 
             GetQuestion();
 
-            
+
 
         }
 
@@ -438,10 +330,6 @@ namespace FlagRace
             StartButton2();
         }
 
-        private void BtnStart3_Click(object sender, EventArgs e)
-        {
-            StartButton3();
-        }
 
         #endregion
 
@@ -460,30 +348,19 @@ namespace FlagRace
             {
                 lblCountryName.Visible = false;
             }
-                
-                
+
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             GetQuestion();
 
-            
-
             if (checkBox.Checked)
             {
                 checkBox.Checked = false;
             }
         }
-
-        private void pctBoxGame2B_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pctBoxGame2A_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
